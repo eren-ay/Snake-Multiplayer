@@ -5,8 +5,9 @@ public class Snake : MonoBehaviour
 {
 
     private float baseSpeed = 5f;
+    //[SerializeField]//for unity controled variables
     private float speedIncreasePerDifficulty = 5f;
-    private int difficultyLevel = 10;
+    private int difficultyLevel = 1;
     private float currentSpeed;
     private Vector2 direction = Vector2.right;
 
@@ -77,12 +78,11 @@ public class Snake : MonoBehaviour
 
     void UpdateCurrentSpeed()
     {
-        currentSpeed = baseSpeed + (difficultyLevel * speedIncreasePerDifficulty);
+        currentSpeed = baseSpeed + ((difficultyLevel-1) * speedIncreasePerDifficulty);
         moveInterval = 1f / currentSpeed; 
 
-        Debug.Log("difficultyLevel: " + difficultyLevel + ",speedIncreasePerDifficulty: " + speedIncreasePerDifficulty); 
-
-        Debug.Log("Current Speed: " + currentSpeed + ", Move Interval: " + moveInterval); 
+        //Debug.Log("difficultyLevel: " + difficultyLevel + ",speedIncreasePerDifficulty: " + speedIncreasePerDifficulty); 
+        //Debug.Log("Current Speed: " + currentSpeed + ", Move Interval: " + moveInterval); 
     }
 
     public void SetSpeed(float newSpeed)
