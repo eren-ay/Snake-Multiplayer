@@ -56,3 +56,6 @@ thumbs_*
 
 # If the Packages folder exists, ignore it
 Packages/
+
+Logs/
+*.log
