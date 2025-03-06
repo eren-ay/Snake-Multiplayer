@@ -35,7 +35,6 @@ public class FoodSpawner : MonoBehaviour
         if (foodPrefab != null)
         {
             Vector3 randomizedPosition = randomizePosition();
-            //foodPrefab.AddComponent<BoxCollider2D>(gridArea);
             
             GameObject newFood = Instantiate(foodPrefab, randomizedPosition, Quaternion.identity);
 
